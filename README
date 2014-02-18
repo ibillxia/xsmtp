@@ -1,0 +1,14 @@
+####################################################
+#     xsmtp - A simple realization of smtp protocol
+#
+# Author: Bill Xia
+# Blog: http://ibillxia.github.com
+# Email: ibillxia@gmail.com
+####################################################
+
+This program is a simple mail dispatcher via smtp protocol. It runs only on Linux/Unix plantforms.
+For more about pop3 and it's RFC documents, please refer to wiki: 
+http://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol
+
+Copyright (C) 2011 Bill Xia (ibillxia@gmail.com) 
+
