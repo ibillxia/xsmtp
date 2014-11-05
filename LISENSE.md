@@ -1,13 +1,13 @@
-####################################################
-#     xsmtp - A simple realization of smtp protocol
-#
-# Author: Bill Xia
-# Blog: http://ibillxia.github.com
-# Email: ibillxia@gmail.com
-####################################################
+## xsmtp
+### - A simple realization of smtp protocol
+
+Author: Bill Xia
+Blog: http://ibillxia.github.com
+Email: ibillxia@gmail.com
+---
 
 The MIT License (MIT)
-Copyright (C) 2011 Bill Xia (ibillxia@gmail.com) 
+Copyright (C) 2011-2014 Bill Xia (ibillxia@gmail.com) 
 All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

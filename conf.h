@@ -13,20 +13,28 @@
  * or substantial portions of the Software.
  */
 
-/*
- * This is a header file, include the configurations and interfaces of the whole project.
- * 
- */
+ /*
+  * This is a header file for configurations in the XSMTP project.
+  * 
+  */
 
-#ifndef __XSMTP_H
-#define __XSMTP_H
+#ifndef __XSMTP_CONF_H
+#define __XSMTP_CONF_H
 
-#include "common.h"
-#include "module_mail.h"
-#include "module_user.h"
+// Mail Server configurations
+#define PORT 25  // use port 25, need root privilege
+#define MAX_CLIENTS 32
+#define MAX_RCPT_USR 50
+#define BUF_SIZE 1024
 
-#endif /* __XSMTP_H */
+// User information saving configurations
+const char data_dir[] = "/home/bill/data/";
+const char userinfo[] = "userinfo";
+const char userstat[] = "userstat";
 
-// Local Variables:
-// mode: C++
-// End:
+extern int mail_stat;
+extern int rcpt_user_num;
+extern char from_user[30];
+extern char rcpt_user[MAX_RCPT_USR][30];
+
+#endif

@@ -14,18 +14,38 @@
  */
 
 /*
- * This is a header file, include the configurations and interfaces of the whole project.
+ * This is a header file, include the commonly used items
  * 
  */
 
-#ifndef __XSMTP_H
-#define __XSMTP_H
+#ifndef __XSMTP_COMMON_H
+#define __XSMTP_COMMON_H
 
-#include "common.h"
-#include "module_mail.h"
-#include "module_user.h"
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <fcntl.h>
 
-#endif /* __XSMTP_H */
+#include <unistd.h>
+#include <pthread.h>
+#include <signal.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <net/if.h>
+#include <dirent.h>
+
+using namespace std;
+
+#include "conf.h"
+#include "messages.h"
+
+#endif /* __XSMTP_COMMON_H */
 
 // Local Variables:
 // mode: C++
