@@ -1,8 +1,8 @@
-## xsmtp
+# xsmtp
 ### - A simple realization of smtp protocol
 
 Author: Bill Xia
-Blog: http://ibillxia.github.com
+Blog: http://ibillxia.github.io
 Email: ibillxia@gmail.com
 ---
 
