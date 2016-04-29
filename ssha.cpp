@@ -1,11 +1,13 @@
 #include <openssl/sha.h>
 #include <openssl/rand.h>
 #include <iostream>
+#include <fstream>
 #include <stdio.h>
 #include <string.h>
 
 using namespace std;
 
+char* path = "data/users.txt";
 const int salt_len = 16;
 int pass_len = 0;
 const string lookup = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -38,6 +40,13 @@ void create_hash(unsigned char* pass_plain, unsigned char* pass_enc, int len) {
 	SHA256_Final(pass_enc, &context);
 }
 
+void write_to_file(string user, string salt, string pass) {
+	ofstream file;
+	file.open(path, ios::app);
+	file << user << " " << pass << " " << salt << endl;
+	file.close();
+}
+
 void ssha(string user, string pass_str) {
 	
 	// set password length global variable
@@ -64,14 +73,27 @@ void ssha(string user, string pass_str) {
 	create_hash(pass_plain, pass_enc, sizeof(salted_pass));
 	
 	// write username , hashed password, and salt to text file
+	string pass_str_2((char*) pass);
+	string salt_str((char*) salt);
+	write_to_file(user, pass_str_2, salt_str);
 	
 }
 
 int main() {
-	string user = "robobert"
-	string pass_str = "password";
+	//string user = "robobert"
+	//string pass_str = "password";
+	string user;
+	string pass_str;	
 	
+	cout << "Enter username to register: ";
+	cin >> user;
+
+	cout << "Enter password: ";
+	cin >> pass_str;
+
 	ssha(user, pass_str);
 	
+	cout << "User registration complete.\n";
+
 	return 0;
 }
