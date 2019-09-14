@@ -28,13 +28,13 @@
 #define BUF_SIZE 1024
 
 // User information saving configurations
-const char data_dir[] = "/home/bill/data/";
+const char data_dir[] = "/Users/billxia/Program/github/xsmtp/data/";
 const char userinfo[] = "userinfo";
 const char userstat[] = "userstat";
 
 extern int mail_stat;
 extern int rcpt_user_num;
-extern char from_user[30];
+extern char from_user[64];
 extern char rcpt_user[MAX_RCPT_USR][30];
 
 #endif

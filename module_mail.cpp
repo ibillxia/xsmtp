@@ -39,8 +39,10 @@ void *mail_proc(void* param) {
 			cout << "Request stream: " << buf;
 			respond(client_sockfd, buf);
 		} else {
-			cout << "S: no data received from client. The server exit permanently.\n";
-			break;
+			// cout << "S: no data received from client. The server exit permanently.\n";
+			//break;
+			sleep(1);
+			continue;
 		}
 	}
 	cout << "S:[" << client_sockfd << "] socket closed by client." << endl;

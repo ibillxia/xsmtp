@@ -31,7 +31,7 @@ int check_user() {
 	strcat(file, userinfo);
 
 	fp = fopen(file, "r");
-	while (fgets(data, sizeof(data), fp) > 0) {
+	while (fgets(data, sizeof(data), fp) != NULL) {
 		if (strncmp(from_user, data, strlen(from_user)) == 0) // valid user
 			return 1;
 	}
@@ -80,7 +80,7 @@ int check_name_pass(char* name, char* pass) {
 	strcpy(file, data_dir);
 	strcat(file, userinfo);
 	fp = fopen(file, "r");
-	while (fgets(data, sizeof(data), fp) > 0) {
+	while (fgets(data, sizeof(data), fp) != NULL) {
 		if (strncmp(data, name, strlen(name)) == 0) { // find username
 			char *p;
 			p = strchr(data, ' ');
@@ -110,13 +110,13 @@ void user_quit() {
 	strcpy(file, data_dir);
 	strcat(file, userstat);
 	fp = fopen(file, "w+");
-	while (fgets(data, sizeof(data), fp) > 0) {
+	while (fgets(data, sizeof(data), fp) != NULL) {
 		if (strncmp(data, from_user, strlen(from_user)) == 0) {
 			flag = 1;
 		}
 		if (flag) {
 			len = strlen(data);
-			if (fgets(data, sizeof(data), fp) > 0) {
+			if (fgets(data, sizeof(data), fp) != NULL) {
 				len = -len;
 				fseek(fp, len, SEEK_CUR);
 				fputs(data, fp);

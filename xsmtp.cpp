@@ -22,7 +22,7 @@
 
 int mail_stat = 0;
 int rcpt_user_num = 0;
-char from_user[30] = "";
+char from_user[64] = "";
 char rcpt_user[MAX_RCPT_USR][30] = {""};
 
 int quit(int arg);
