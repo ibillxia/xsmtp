@@ -103,7 +103,7 @@ void respond(int client_sockfd, char* request) {
 		mail_stat = 1;
 		send_data(client_sockfd, reply_code[6]);
 	} else if (strncmp(request, "NOOP", 4) == 0) {
-		send_data(client_sockfd, reply_code[5]);
+		send_data(client_sockfd, reply_code[6]);
 	} else if (strncmp(request, "QUIT", 4) == 0) {
 		mail_stat = 0;
 		user_quit();
